@@ -1,9 +1,16 @@
 import React from 'react'
+import Likesbutton from './Likesbutton'
 
-const PostItem = () => {
+const PostItem = ({image, likes, caption}) => {
   return (
-    <div>
-      
+    <div className='postcard' >
+      <image src={image} alt="post image" />
+      <div>
+        <div>
+        <Likesbutton/> <h3>{likes} likes</h3>
+        </div>
+        <p>{caption}</p>
+      </div>
     </div>
   )
 }
