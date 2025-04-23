@@ -25,7 +25,7 @@ const PostCard = ({image, likes, caption, id, setPosts, posts}) => {
       <div>
         <div>
           <LikeButton initialLikes={likes} postId={id} onLike={()=> handleLike(id)} />
-          <EmojiPicker/>
+          <EmojiPicker postId={id} currentReactions={posts.reactions}/>
         </div>
         <p>{caption}</p>
       </div>
