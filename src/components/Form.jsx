@@ -8,7 +8,7 @@ const Form = () => {
   function handleSubmit(e){
     e.preventDefault()
 
-    const newData= {image:image}
+    const newData= {image:image, caption:caption, likes: 0}
     
     //add the post method here
   }
