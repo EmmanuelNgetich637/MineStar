@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import DeleteButton from './components/DeleteButton'
 import Form from './components/Form'
 import Header from './components/Header'
 import LikeFilter from './components/LikeFilter'
-import Likesbutton from './components/LikeButton'
 import PostList from './components/PostList'
 
 function App() {
@@ -23,7 +21,6 @@ function App() {
   return (
     <>
       <Header/>
-      <DeleteButton/>
       <Form onAddPost={handleAddPost}/>
       <PostList posts={posts} setPosts={setPosts} />
       <LikeFilter/>
