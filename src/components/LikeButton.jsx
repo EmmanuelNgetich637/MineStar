@@ -6,10 +6,27 @@ export default function LikeButton({ initialLikes, postId, onLike }) {
 
   const handleClick = () => {
     const newLikeStatus = !isLiked;
+    const updatedLikes = newLikeStatus ? likes + 1 : likes - 1;
+  
     setIsLiked(newLikeStatus);
-    setLikes(newLikeStatus ? likes + 1 : likes - 1);
-    onLike(postId, newLikeStatus);
+    setLikes(updatedLikes);
+  
+    // Update the likes in db.json
+    fetch(`http://localhost:3000/posts/${postId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ likes: updatedLikes }),
+    })
+      .then(res => res.json())
+      .then(updatedPost => {
+        if (onLike) {
+          onLike(postId, updatedPost.likes); // optional callback
+        }
+      });
   };
+  
 
   return (
     <button onClick={handleClick} className="like-btn">

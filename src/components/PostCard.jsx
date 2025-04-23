@@ -3,9 +3,6 @@ import LikeButton from './LikeButton'
 import DeleteButton from './DeleteButton'
 
 const PostCard = ({image, likes, caption, id, setPosts, posts}) => {
-  const handleDelete = (postId) => {
-    setPosts(posts.filter(post => post.id !== postId));
-  };
 
   const handleLike = (postId) => {
     setPosts(posts.map(post => 
@@ -21,7 +18,7 @@ const PostCard = ({image, likes, caption, id, setPosts, posts}) => {
         </div>
         <p>{caption}</p>
       </div>
-      <DeleteButton onDelete={() => handleDelete(id)} />
+      <DeleteButton />
     </div>
   )
 }
