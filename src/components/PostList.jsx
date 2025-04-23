@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PostCard from './PostCard'
 
 const PostList = () => {
-  const [posts, setPosts] = useState("")
+  const [posts, setPosts] = useState([])
 
   useEffect(()=>{
     fetch("http://localhost:3000/posts")

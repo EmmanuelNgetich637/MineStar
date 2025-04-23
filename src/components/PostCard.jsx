@@ -4,7 +4,7 @@ import Likesbutton from './Likesbutton'
 const PostCard = ({image, likes, caption}) => {
   return (
     <div className='postcard' >
-      <image src={image} alt="post image" />
+      <img src={image} alt="post image" />
       <div>
         <div>
         <Likesbutton/> <h3>{likes} likes</h3>
