@@ -8,7 +8,6 @@ import PostItem from './components/PostItem'
 import PostList from './components/PostList'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
