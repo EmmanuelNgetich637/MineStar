@@ -6,12 +6,18 @@ const PostCard = ({image, likes, caption, id, setPosts, posts}) => {
   const handleDelete = (postId) => {
     setPosts(posts.filter(post => post.id !== postId));
   };
+
+  const handleLike = (postId) => {
+    setPosts(posts.map(post => 
+      post.id === postId ? { ...post, likes: post.likes + 1 } : post
+    ));
+  };
   return (
     <div className='postcard' >
       <img src={image} alt="post image" />
       <div>
         <div>
-        <LikeButton initialLikes={likes} postId={id} />
+        <LikeButton initialLikes={likes} postId={id} onLike={()=> handleLike(id)} />
         </div>
         <p>{caption}</p>
       </div>
