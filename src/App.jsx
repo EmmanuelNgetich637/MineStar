@@ -18,7 +18,7 @@ function App() {
   }, [])
 
   function handleAddPost(newPost) {
-    setPlants((prevPosts) => [...prevPosts, newPost]);
+    setPosts((prevPosts) => [...prevPosts, newPost]);
   }
   return (
     <>
