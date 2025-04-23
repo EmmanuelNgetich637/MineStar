@@ -1,0 +1,35 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "image": "https://media.istockphoto.com/id/1255493335/photo/womans-legs-splashing-water-on-the-beach.webp?a=1&b=1&s=612x612&w=0&k=20&c=IG1qL4DvP1SiOspzqwsmwA_IKUrh2p1UHQS2IEdjU9E=",
+        "caption": "Golden hour vibes 🌅 #beachlife",
+        "likes": 1320
+      },
+      {
+        "id": 2,
+        "image": "https://media.istockphoto.com/id/1400194993/photo/cappuccino-art.webp?a=1&b=1&s=612x612&w=0&k=20&c=CN_BYkO9GKOH4JgMebiKOlqtMwgE_yGoX0_vOVHvEJs=",
+        "caption": "Start your day right ☕✨ #coffeeaddict",
+        "likes": 980
+      },
+      {
+        "id": 3,
+        "image": "https://media.istockphoto.com/id/1917023956/photo/happy-woman-with-a-yellow-hiking-backpack-enjoying-the-mountain-landscape.webp?a=1&b=1&s=612x612&w=0&k=20&c=1JapfdvuRb_Dm9bXgotfDCaWD5d9gMwjbl5xgWr92tc=",
+        "caption": "Views from the top! 🏔️ #adventure",
+        "likes": 2040
+      },
+      {
+        "id": 4,
+        "image": "https://media.istockphoto.com/id/1071204136/photo/cute-bengal-funny-cat-playing.webp?a=1&b=1&s=612x612&w=0&k=20&c=dRQfIYlaiqUeDXOkTbJWIb9pFKUMpqwukmNJUg0Dvys=",
+        "caption": "Meet my lazy assistant 🐾 #catlife",
+        "likes": 3420
+      },
+      {
+        "id": 5,
+        "image": "https://media.istockphoto.com/id/1829241109/photo/enjoying-a-brunch-together.webp?a=1&b=1&s=612x612&w=0&k=20&c=PDAOJZowRgcFpLORXCV5p9Yt4wuOlxpYkxOUk5M4koo=",
+        "caption": "Cheat day done right 🍔🍟 #foodie",
+        "likes": 178
+      }
+    ]
+  }
+  
