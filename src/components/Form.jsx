@@ -5,26 +5,40 @@ const Form = ({onAddPost}) => {
   const [caption, setCaption] = useState("")
   const [preview, setPreview] = useState(null)
 
-  function handleSubmit(e){
-    e.preventDefault()
-
-    const newPost= {image:image, caption:caption, likes: 0}
-    
-    fetch("http://localhost:3000/posts", {
-      method: "POST",  
-      headers: {
-        "Content-Type": "application/json",  
-      },
-      body: JSON.stringify(newPost),  
-    })
-    .then(res=> res.json())
-    .then(data =>{
-      onAddPost(data)
-      setImage(null)
-      setCaption("")
-      setPreview(null)
-    })
+  function handleSubmit(e) {
+    e.preventDefault();
+  
+    if (!image) return;
+  
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64Image = reader.result;
+  
+      const newPost = {
+        image: base64Image, // now a base64 string
+        caption: caption,
+        likes: 0,
+      };
+  
+      fetch("http://localhost:3000/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newPost),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          onAddPost(data);
+          setImage(null);
+          setCaption("");
+          setPreview(null);
+        });
+    };
+  
+    reader.readAsDataURL(image); // this converts the file to base64
   }
+  
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
