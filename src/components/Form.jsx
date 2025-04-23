@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 
-const Form = () => {
+const Form = (onAddPost) => {
   const [image, setImage] = useState(null)
   const [caption, setCaption] = useState("")
   const [preview, setPreview] = useState(null)
@@ -18,6 +18,12 @@ const Form = () => {
       body: JSON.stringify(newPost),  
     })
     .then(res=> res.json())
+    .then(data =>{
+      onAddPost(data)
+      setImage(null)
+      setCaption("")
+      setPreview(null)
+    })
   }
   const handleImageChange = (e) => {
     const file = e.target.files[0];
