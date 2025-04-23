@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Form = () => {
   const [image, setImage] = useState(null)
@@ -8,12 +8,17 @@ const Form = () => {
   function handleSubmit(e){
     e.preventDefault()
 
-    const newData= {image:image, caption:caption, likes: 0}
+    const newPost= {image:image, caption:caption, likes: 0}
     
-    //add the post method here
+    fetch("http://localhost:3000/posts", {
+      method: "POST",  
+      headers: {
+        "Content-Type": "application/json",  
+      },
+      body: JSON.stringify(newPost),  
+    })
+    .then(res=> res.json())
   }
-
-  
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
