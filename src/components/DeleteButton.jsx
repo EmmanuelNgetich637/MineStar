@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const DeleteButton = () => {
+export default function DeleteButton({ onDelete }) {
   return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default DeleteButton
+    <button 
+      onClick={onDelete}
+      className="text-red-600 hover:text-red-800 font-medium text-sm transition-colors"
+    >
+      🗑️ Delete
+    </button>
+  );
+} 
