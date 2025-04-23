@@ -1,6 +1,6 @@
 import React, {useState } from 'react'
 
-const Form = (onAddPost) => {
+const Form = ({onAddPost}) => {
   const [image, setImage] = useState(null)
   const [caption, setCaption] = useState("")
   const [preview, setPreview] = useState(null)
