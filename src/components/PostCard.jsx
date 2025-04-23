@@ -1,7 +1,7 @@
 import React from 'react'
 import Likesbutton from './Likesbutton'
 
-const PostItem = ({image, likes, caption}) => {
+const PostCard = ({image, likes, caption}) => {
   return (
     <div className='postcard' >
       <image src={image} alt="post image" />
@@ -15,4 +15,4 @@ const PostItem = ({image, likes, caption}) => {
   )
 }
 
-export default PostItem
+export default PostCard

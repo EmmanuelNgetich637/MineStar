@@ -4,7 +4,6 @@ import Form from './components/Form'
 import Header from './components/Header'
 import LikeFilter from './components/LikeFilter'
 import Likesbutton from './components/Likesbutton'
-import PostItem from './components/PostCard'
 import PostList from './components/PostList'
 
 function App() {
@@ -14,10 +13,9 @@ function App() {
       <Header/>
       <DeleteButton/>
       <Form/>
+      <PostList/>
       <LikeFilter/>
       <Likesbutton/>
-      <PostItem/>
-      <PostList/>
     </>
   )
 }
