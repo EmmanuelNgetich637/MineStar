@@ -1,4 +1,6 @@
 import PostCard from './PostCard'
+import Header from './Header'
+
 
 const PostList = ({posts, setPosts}) => {
   const data = posts.map(post =>{
@@ -7,6 +9,7 @@ const PostList = ({posts, setPosts}) => {
 
   return (
     <div>
+      <Header/>
       {data}
     </div>
   )

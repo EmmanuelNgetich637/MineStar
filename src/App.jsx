@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Form from './components/Form'
-import Header from './components/Header'
 import LikeFilter from './components/LikeFilter'
 import PostList from './components/PostList'
-import { BrowserRouter as Router } from 'react-router-dom'
+
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -20,12 +20,11 @@ function App() {
     setPosts((prevPosts) => [...prevPosts, newPost]);
   }
   return (
-      <>
-      <Header/>
-      <Form onAddPost={handleAddPost}/>
-      <PostList posts={posts} setPosts={setPosts} />
-      <LikeFilter/>
-      </>
+    <Routes>
+        <Route path="/" element={<PostList posts={posts} setPosts={setPosts} />} />
+        <Route path="/form" element={<Form onAddPost={handleAddPost} />} />
+        <Route path="/liked" element={<LikeFilter />} />
+    </Routes>
   )
 }
 

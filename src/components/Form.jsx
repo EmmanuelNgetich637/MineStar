@@ -1,9 +1,11 @@
 import React, {useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Form = ({onAddPost}) => {
   const [image, setImage] = useState(null)
   const [caption, setCaption] = useState("")
   const [preview, setPreview] = useState(null)
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,6 +35,7 @@ const Form = ({onAddPost}) => {
           setImage(null);
           setCaption("");
           setPreview(null);
+          navigate('/')
         });
     };
   
@@ -68,6 +71,23 @@ const Form = ({onAddPost}) => {
   }
 
   return (
+    <div style={{ position: "relative" }}>
+    <button 
+      type="button" 
+      onClick={() => navigate('/')} 
+      style={{ 
+        position: "absolute", 
+        top: "20px", 
+        right: "20px", 
+        background: "transparent", 
+        border: "none", 
+        fontSize: "24px", 
+        cursor: "pointer" 
+        }}
+      >
+        ×
+    </button>
+
     <form onSubmit={handleSubmit} className='form'>
       <div
         onDrop={handleDrop}
@@ -106,6 +126,8 @@ const Form = ({onAddPost}) => {
       />
       <button type='submit' >Add Post</button>
     </form>
+
+    </div>
   );
   
 }
