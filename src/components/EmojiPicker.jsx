@@ -32,7 +32,7 @@ function EmojiPicker({postId }) {
           });
         })
         .then((res) => res.json())
-        .then((data) => {
+        .then(() => {
           setEmoji(emoji)
           setEmojiTable(false);
         })

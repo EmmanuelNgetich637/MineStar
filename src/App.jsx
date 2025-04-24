@@ -4,6 +4,7 @@ import Form from './components/Form'
 import Header from './components/Header'
 import LikeFilter from './components/LikeFilter'
 import PostList from './components/PostList'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -19,12 +20,12 @@ function App() {
     setPosts((prevPosts) => [...prevPosts, newPost]);
   }
   return (
-    <>
+      <>
       <Header/>
       <Form onAddPost={handleAddPost}/>
       <PostList posts={posts} setPosts={setPosts} />
       <LikeFilter/>
-    </>
+      </>
   )
 }
 
