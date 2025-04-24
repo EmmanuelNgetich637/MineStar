@@ -62,7 +62,7 @@ const Form = ({onAddPost}) => {
 
   function handleCaption(e){
     const value = e.target.value;
-    if (value.length <= 2100) {
+    if (value.length <= 200) {
       setCaption(value);
     }
   }
