@@ -8,11 +8,11 @@ const Form = ({onAddPost}) => {
   const navigate = useNavigate()
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
   
     if (!image) return;
   
-    const reader = new FileReader();
+    const reader = new FileReader()
     reader.onloadend = () => {
       const base64Image = reader.result;
   
@@ -20,6 +20,7 @@ const Form = ({onAddPost}) => {
         image: base64Image, // now a base64 string
         caption: caption,
         likes: 0,
+        reactions:{}
       };
   
       fetch("http://localhost:3000/posts", {
