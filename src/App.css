@@ -25,8 +25,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 100vw;
-  min-height: 100vh; */
   position: relative;
   background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9166666666666666) 12%,rgba(4, 54, 7, 1) 25%,rgba(6, 36, 6, 0.9944444444444445) 40%,rgba(1, 56, 1, 1) 56.00000000000001%,rgba(2, 34, 2, 1) 69%,rgba(6, 72, 2, 0.9944444444444445) 84%,rgba(4, 27, 3, 1) 96%);
   border-radius: 0px 0px 0px 0px;
@@ -121,6 +119,7 @@ body {
   font-style: normal;
   font-weight: bold;
 }
+
 /* Scrollable container wraps everything and enables snapping */
 .scroll-container {
     height: 100vh; /* Full screen height */
@@ -185,7 +184,7 @@ body {
   gap: 8px;
 }
 .profile p{
-    color: rgb(15, 255, 55);
+    color: rgb(222, 255, 228);
     font-size: 20px;
     font-family: "sourcesanspro";
     font-style: italic;
