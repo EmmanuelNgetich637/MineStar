@@ -29,8 +29,9 @@ export default function LikeButton({ initialLikes, postId, onLike }) {
   
 
   return (
-    <button onClick={handleClick} className="like-btn">
-      {isLiked ? "❤️" : "🤍"} {likes}
-    </button>
+    <div className="likes">
+    <button onClick={handleClick} className='like-button' > {isLiked ? "❤️" : "🤍"} </button>
+    <p>{likes} likes</p>
+    </div>
   );
 }

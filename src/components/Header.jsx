@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
 
-      <h1>MineStar ✧</h1>
-
-      <nav>
-      <button><strong> <Link to="/">Posts</Link> </strong></button>
-      <button><strong> <Link to="/form">+ Add</Link> </strong></button>
-      <button><strong> <Link to="/liked"> ❤️ </Link> </strong></button>
+      <nav className='nav-header'>
+        <div className='headbox'>
+        <Link to="/"><h1 className='heading'>MineStar ✧</h1></Link>
+        </div>
+       <div className='navs'>
+        <Link to="/form"><button className='addbutton' >+</button></Link> 
+        <Link to="/liked"> <button className='likesbutton'>💚</button> </Link> 
+      </div> 
       </nav>
-      
-    </div>
   )
 }
 
