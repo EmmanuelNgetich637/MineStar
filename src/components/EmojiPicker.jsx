@@ -42,9 +42,15 @@ function EmojiPicker({postId }) {
     }
     
   return (
-    <button onClick={() => setEmojiTable(!emojiTable)}>
-      {emojiTable ? <Picker data={data} onEmojiSelect={handleEmojiSelect} /> : emoji || "😊"}
-    </button>
+    <div className="emoji-wrapper">
+      <button onClick={() => setEmojiTable(!emojiTable)} className="emoji-button">{emoji || "😊"}</button>
+
+      {emojiTable && (
+        <div className="emoji-popup">
+          <Picker data={data} onEmojiSelect={handleEmojiSelect} className="emojitable" />
+        </div>
+      )}
+    </div>
 
   )
 }

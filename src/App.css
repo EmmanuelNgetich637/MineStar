@@ -1,0 +1,339 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9166666666666666) 12%,rgba(4, 54, 7, 1) 25%,rgba(6, 36, 6, 0.9944444444444445) 40%,rgba(1, 56, 1, 1) 56.00000000000001%,rgba(2, 34, 2, 1) 69%,rgba(6, 72, 2, 0.9944444444444445) 84%,rgba(4, 27, 3, 1) 96%);
+  border-radius: 0px 0px 0px 0px;
+  z-index: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+.nav-header {
+  position: absolute;
+  padding: 2%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 2%;
+  background: #2d2d3b00;
+  border-radius: 0px 0px 0px 0px;
+}
+
+
+.navs {
+  position: absolute;
+  left: 89%;
+  top: 0px;
+  width: 10%;
+  height: 100%;
+  
+}
+
+/* add */
+.addbutton {
+    position: absolute;
+    left: 5%;
+    text-align: center;  
+    background: #ffffff00;
+    border: 0;
+    color: rgba(61, 224, 88, 1);
+    font-size: 290%;
+    font-weight: 1000;
+}
+.likesbutton {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    text-align: center;  
+    background: #ffffff00;
+    border: 0;
+    font-size: 220%;
+    font-weight: bold;
+}
+
+
+
+
+/* MineStar ✧  */
+.headbox {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 10%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center ;
+  min-width: 100%;
+  
+  vertical-align: top;
+  display: flex;
+  white-space: break-spaces;
+
+}
+
+
+
+.heading {
+  color: rgba(61, 224, 88, 1);
+  text-transform: none;
+  
+  line-break: auto;
+  overflow-wrap: initial;
+  white-space: break-spaces;
+  font-size: 48px;
+  text-rendering: geometricPrecision;
+  caret-color: rgba(61, 224, 88, 1);
+  text-decoration: none;
+  letter-spacing: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Scrollable container wraps everything and enables snapping */
+.scroll-container {
+    height: 100vh; /* Full screen height */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    padding: 0; 
+    margin: 0;
+  }
+  
+  /* Each row is a full snap point */
+  .snap-row {
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
+    padding: 1%;
+    min-height: 100vh; /* One full screen row */
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+  
+  /* Styling for individual post cards */
+  .postcard {
+    background: #000000;
+    border: 0.5px solid #313131;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 60%;
+    margin-top: 1%;
+  }
+  
+  .postcard img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+  
+  /* Mobile view fallback to single column */
+  @media (max-width: 600px) {
+    .snap-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+.userprofilepic{
+  top: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100px 100px 100px 100px;
+  background: url(https://media.istockphoto.com/id/1768858548/photo/dark-backlight-shadow-silhouette-of-male-person-incognito-unknown-profile.webp?a=1&b=1&s=612x612&w=0&k=20&c=nO5vniMxFB_BbOSkk2llnbzRsG6byoZpHG23xHgAyf4=)no-repeat center center / cover;;
+}
+.profile{
+  display: flex;
+  align-items: center; /* vertically align pic and text */
+  gap: 8px;
+}
+.profile p{
+    color: rgb(222, 255, 228);
+    font-size: 20px;
+    font-family: "Arial, Helvetica, sans-serif";
+    font-style: italic;
+
+  }
+
+/* caption */
+.caption-area {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .captionbuttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .likes{
+    display: flex;
+  }
+  /* Left side buttons */
+  .left-buttons {
+    display: flex;
+    align-items: center;
+
+  }
+  
+  /* Button sizes */
+  .like-button,
+  .emoji-button,
+  .delete-button {
+    text-align: center;  
+    background: #ffffff00;
+    border: 0;
+    color: rgba(61, 224, 88, 1);
+    font-size: 150%;
+    cursor: pointer;
+  }
+  
+  .emoji-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* This is your floating popup */
+  .emoji-popup {
+    position: absolute;
+    top: 120%; 
+    left: 0;
+    z-index: 9999;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Fullscreen dimmed background */
+.form-layout {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+  }
+
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* Popup box */
+  .form-popup {
+    background: rgba(46, 48, 46, 0.4);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    height: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(245, 244, 244, 0.7);
+  }
+  
+  /* Form content */
+
+  .styled-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+  }
+  
+  .styled-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #119206;
+  }
+  
+  /* Inputs */
+  .styled-form input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+  }
+  
+  /* Buttons */
+  .styled-form button[type="submit"] {
+    background-color: #48e400d2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .styled-form button[type="submit"]:hover {
+    background-color: #40ca00;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2);
+    color: #2b9628;
+  }
+    
+/* Container for the image preview */
+.preview-container {
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Image inside the preview container */
+
+  .preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 768px) {
+    .form-layout {
+      flex-direction: column;
+    }
+  }
+  
+  
+  
+  

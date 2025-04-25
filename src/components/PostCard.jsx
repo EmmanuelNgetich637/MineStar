@@ -21,15 +21,24 @@ const PostCard = ({image, likes, caption, id, setPosts, posts}) => {
   };
   return (
     <div className='postcard' >
-      <img src={image} alt="post image" />
-      <div>
-        <div>
-          <LikeButton initialLikes={likes} postId={id} onLike={()=> handleLike(id)} />
-          <EmojiPicker postId={id} currentReactions={posts.reactions}/>
-        </div>
-        <p>{caption}</p>
+      <div className='profile'>
+        <div className='userprofilepic'></div><p>@Username</p>
       </div>
-      <DeleteButton onDelete={() => handleDelete(id)} />
+      <img src={image} alt="post image" className='post-image' />
+      <div className='caption-area'>
+        <div className='captionbuttons'>
+        <div className='left-buttons'>
+          <LikeButton initialLikes={likes} postId={id} onLike={()=> handleLike(id)} />
+          <EmojiPicker postId={id} currentReactions={posts.reactions} />
+        </div>
+        <DeleteButton onDelete={() => handleDelete(id)}  />
+        </div>
+        <div className='caption'>
+        <p>{caption}</p>
+        </div>
+
+      </div>
+     
     </div>
   )
 }

@@ -8,10 +8,13 @@ const PostList = ({posts, setPosts}) => {
   })
 
   return (
-    <div>
-      <Header/>
-      {data}
+    <div className="scroll-container">
+      <div className='post-grid'>
+        <Header/>
+        {data}
+      </div>
     </div>
+    
   )
 }
 
