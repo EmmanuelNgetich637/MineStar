@@ -5,6 +5,7 @@ const Form = ({onAddPost}) => {
   const [image, setImage] = useState(null)
   const [caption, setCaption] = useState("")
   const [preview, setPreview] = useState(null)
+  const [showForm, setShowForm] = useState(true)
   const navigate = useNavigate()
 
   function handleSubmit(e) {
@@ -72,63 +73,65 @@ const Form = ({onAddPost}) => {
   }
 
   return (
-    <div style={{ position: "relative" }}>
+    <>
+    {showForm&&(
+
+      <div className='form-overlay'>
+      <div className='form-popup'>
     <button 
       type="button" 
       onClick={() => navigate('/')} 
-      style={{ 
-        position: "absolute", 
-        top: "20px", 
-        right: "20px", 
-        background: "transparent", 
-        border: "none", 
-        fontSize: "24px", 
-        cursor: "pointer" 
-        }}
       >
-        ×
+        x
     </button>
+      <div className="form-layout">
+        <form onSubmit={handleSubmit} className='styled-form'>
+          <div
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            style={{
+              border: "2px dashed #aaa",
+              padding: "20px",
+              textAlign: "center",
+              borderRadius: "8px",
+              maxWidth: "100%",
+              margin: "20px 0"
+            }}
+          >
+            <p>Drag and drop an image here, or</p>
+            <input type="file" accept="image/*" onChange={handleImageChange} />
+          </div>
+      
+          {preview && (
+            <div className="preview-container">
+              <h4>Preview:</h4>
+              <img src={preview} alt="Preview" />
+            </div>
+          )}
+      
+          <input
+            style={{
+              border: "1px solid #aaa",
+              padding: "1%",
+              textAlign: "center",
+              borderRadius: "8px",
+              minWidth: "100%",
+            }}
+            type='text'
+            value={caption}
+            placeholder='Caption...'
+            onChange={handleCaption}
+          />
+          <button type='submit' style={{ padding: "10px", background: "#ff4444", color: "white", border: "none", borderRadius: "8px", marginTop: "15px" }} >Add Post</button>
+        </form>
 
-    <form onSubmit={handleSubmit} className='form'>
-      <div
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-        style={{
-          border: "2px dashed #aaa",
-          padding: "20px",
-          textAlign: "center",
-          borderRadius: "8px",
-          maxWidth: "30%",
-        }}
-      >
-        <p>Drag and drop an image here, or</p>
-        <input type="file" accept="image/*" onChange={handleImageChange} />
       </div>
-  
-      {preview && (
-        <div style={{ marginTop: "20px" }}>
-          <h4>Preview:</h4>
-          <img src={preview} alt="Preview" style={{ maxWidth: "100%", height: "auto" }} />
-        </div>
-      )}
-  
-      <input
-        style={{
-          border: "1px  #aaa",
-          padding: "1%",
-          textAlign: "center",
-          borderRadius: "8px",
-          minWidth: "30%",
-        }}
-        type='text'
-        value={caption}
-        placeholder='Caption...'
-        onChange={handleCaption}
-      />
-      <button type='submit' >Add Post</button>
-    </form>
 
     </div>
+
+    </div>
+    )}
+    </>
   );
   
 }
