@@ -19,6 +19,7 @@ const PostCard = ({image, likes, caption, id, setPosts, posts}) => {
       setPosts(posts.filter(post => post.id !== postId));
     });
   };
+  
   return (
     <div className='postcard' >
       <div className='profile'>
